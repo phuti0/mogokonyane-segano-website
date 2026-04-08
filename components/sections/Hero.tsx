@@ -1,31 +1,22 @@
 'use client';
 
 import { useRef } from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FiArrowRight, FiPlay, FiChevronDown } from 'react-icons/fi';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { GradientOrbs, WaveDivider, FloatingShapes } from '@/components/ui/animated-backgrounds';
-import { TypewriterText, AnimatedCounter } from '@/components/ui/effects';
+import { AnimatedCounter } from '@/components/ui/effects';
 import { 
-  fadeInUp, 
   staggerContainer, 
   staggerItem, 
-  scaleInBounce,
-  viewportOnce 
+  scaleInBounce
 } from '@/lib/animations';
 
 const stats = [
   { value: 214, prefix: 'R', suffix: 'B', label: 'Market Size' },
   { value: 2500000, suffix: '+', label: 'Farmers', display: '2.5M+' },
   { value: 5, label: 'Provinces' },
-];
-
-const typewriterWords = [
-  'Market Access',
-  'Digital Tools',
-  'Knowledge Hub',
-  'Community Growth',
-  'Food Security',
 ];
 
 export default function Hero() {
@@ -94,7 +85,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
-                Connecting Farmers,
+                Sell smarter.
               </motion.span>
               <br />
               <motion.span 
@@ -103,7 +94,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
-                Feeding
+                Farm
               </motion.span>{' '}
               <motion.span 
                 className="gradient-text-gold inline-block"
@@ -111,29 +102,17 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
-                Opportunities
+                stronger.
               </motion.span>
             </motion.h1>
-
-            {/* Dynamic typewriter subheadline */}
-            <motion.div
-              variants={staggerItem}
-              className="flex items-center justify-center lg:justify-start gap-2 mb-6"
-            >
-              <span className="text-xl text-muted-foreground">Providing</span>
-              <span className="text-xl font-semibold text-primary">
-                <TypewriterText words={typewriterWords} />
-              </span>
-            </motion.div>
 
             {/* Description */}
             <motion.p
               variants={staggerItem}
               className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10"
             >
-              Transforming rural agriculture through technology-driven solutions. 
-              Access markets, gain knowledge, and build sustainable communities 
-              with our innovative platform.
+              Join Mogokonyane-Segano to access real buyers, local market prices,
+              and practical farming support in your language.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -147,9 +126,11 @@ export default function Hero() {
                 transition={{ duration: 0.25 }}
               >
                 <Button
+                  asChild
                   size="lg"
                   className="relative bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl hover:shadow-primary/25 transition-all duration-400 group overflow-hidden"
                 >
+                  <Link href="/platform">
                   <span className="relative z-10 flex items-center">
                     Join the Platform
                     <motion.span
@@ -167,6 +148,7 @@ export default function Hero() {
                     whileHover={{ x: '100%' }}
                     transition={{ duration: 0.7, ease: 'easeInOut' }}
                   />
+                  </Link>
                 </Button>
               </motion.div>
 
@@ -176,15 +158,26 @@ export default function Hero() {
                 transition={{ duration: 0.25 }}
               >
                 <Button
+                  asChild
                   size="lg"
                   variant="outline"
                   className="group border-2 border-primary/30 hover:border-primary/60 hover:bg-primary/5 px-8 py-6 text-lg font-semibold transition-all duration-300"
                 >
-                  <FiPlay className="mr-2 w-5 h-5 group-hover:text-primary group-hover:scale-110 transition-all duration-300" />
-                  Watch Demo
+                  <a href="#services">
+                    <FiPlay className="mr-2 w-5 h-5 group-hover:text-primary group-hover:scale-110 transition-all duration-300" />
+                    See How It Works
+                  </a>
                 </Button>
               </motion.div>
             </motion.div>
+
+            <motion.p
+              variants={staggerItem}
+              className="mt-4 text-sm text-muted-foreground max-w-xl mx-auto lg:mx-0"
+            >
+              Built for South African farmers across Limpopo, North West, Gauteng,
+              Free State, and Mpumalanga.
+            </motion.p>
 
             {/* Stats with animated counters */}
             <motion.div

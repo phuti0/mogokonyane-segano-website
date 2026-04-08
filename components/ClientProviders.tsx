@@ -2,7 +2,7 @@
 
 import { ReactNode, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CustomCursor, ScrollProgress, FloatingActionButton } from '@/components/ui/effects';
+import { ScrollProgress, FloatingActionButton } from '@/components/ui/effects';
 import { FloatingParticles, NoiseOverlay } from '@/components/ui/animated-backgrounds';
 import { FiArrowUp } from 'react-icons/fi';
 
@@ -28,9 +28,6 @@ export function ClientProviders({ children }: ClientProvidersProps) {
 
   return (
     <>
-      {/* Custom cursor - only shows on desktop */}
-      <CustomCursor />
-      
       {/* Scroll progress indicator */}
       <ScrollProgress />
       

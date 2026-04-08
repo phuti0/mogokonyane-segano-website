@@ -1,5 +1,24 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Platform MVP Demo (No DB)
+
+The project now includes a platform prototype at `/platform` with:
+
+- User profile/account settings (mock users, no auth yet)
+- Product/service listing creation
+- Search and filters (category, location, price)
+- Order/request tracking (`pending`, `in_progress`, `completed`)
+- Basic customer-provider messaging
+- Admin dashboard for users/listings/orders/analytics
+- Mobile-friendly layouts
+- Input sanitization and validation for core forms
+
+Current constraints:
+
+- No authentication yet (intentionally deferred)
+- No payment integration yet (intentionally deferred)
+- No database yet (state is saved in browser `localStorage`)
+
 ## Getting Started
 
 First, run the development server:

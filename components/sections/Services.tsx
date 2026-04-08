@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { FiShoppingCart, FiBell, FiBook, FiHeart, FiArrowRight, FiCheck } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -272,19 +273,21 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
             >
-              <motion.button
+              <motion.div
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-primary to-primary-dark text-white font-semibold shadow-lg hover:shadow-xl hover:shadow-primary/20 transition-all duration-400"
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Explore All Services
-                <motion.span
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-                >
-                  <FiArrowRight className="w-5 h-5" />
-                </motion.span>
-              </motion.button>
+                <Link href="/platform" className="inline-flex items-center gap-3">
+                  Join the Platform
+                  <motion.span
+                    animate={{ x: [0, 5, 0] }}
+                    transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+                  >
+                    <FiArrowRight className="w-5 h-5" />
+                  </motion.span>
+                </Link>
+              </motion.div>
             </motion.div>
           </Card>
         </motion.div>

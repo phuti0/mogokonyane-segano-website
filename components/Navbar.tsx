@@ -129,16 +129,19 @@ export default function Navbar() {
               className="ml-4"
             >
               <Button
+                asChild
                 className="relative bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-medium px-6 shadow-lg hover:shadow-xl hover:shadow-primary/20 transition-all duration-400 overflow-hidden group"
               >
-                <span className="relative z-10">Get Started</span>
-                {/* Shimmer effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent"
-                  initial={{ x: '-100%' }}
-                  whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.7, ease: 'easeInOut' }}
-                />
+                <Link href="/platform">
+                  <span className="relative z-10">Join the Platform</span>
+                  {/* Shimmer effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent"
+                    initial={{ x: '-100%' }}
+                    whileHover={{ x: '100%' }}
+                    transition={{ duration: 0.7, ease: 'easeInOut' }}
+                  />
+                </Link>
               </Button>
             </motion.div>
           </div>
@@ -229,11 +232,10 @@ export default function Navbar() {
                     visible: { opacity: 1, y: 0 }
                   }}
                 >
-                  <Button 
-                    className="w-full bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-medium py-6 shadow-lg"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Get Started
+                  <Button asChild className="w-full bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-medium py-6 shadow-lg">
+                    <Link href="/platform" onClick={() => setIsOpen(false)}>
+                      Join the Platform
+                    </Link>
                   </Button>
                 </motion.div>
 

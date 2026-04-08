@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { FiMail, FiPhone, FiMapPin, FiSend, FiDownload, FiCheck, FiArrowRight } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -109,12 +108,13 @@ export default function Contact() {
           </motion.span>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-foreground">Get In </span>
-            <span className="gradient-text">Touch</span>
+            <span className="text-foreground">Join the </span>
+            <span className="gradient-text">Platform</span>
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to join our platform or learn more? We&apos;d love to hear from you.
+            Ready to sell smarter and farm stronger? Register your interest and our
+            team will help you get started.
           </p>
         </motion.div>
 
@@ -127,8 +127,8 @@ export default function Contact() {
             viewport={{ once: true, margin: '-100px' }}
           >
             <Card className="glass-card border-0 p-8 md:p-10">
-              <h3 className="text-2xl font-bold mb-2 text-foreground">Send us a message</h3>
-              <p className="text-muted-foreground mb-8">Fill out the form and we&apos;ll get back to you soon.</p>
+              <h3 className="text-2xl font-bold mb-2 text-foreground">Farmer sign-up form</h3>
+              <p className="text-muted-foreground mb-8">Fill out this form and we&apos;ll contact you within 24 hours.</p>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name field */}
@@ -240,7 +240,7 @@ export default function Contact() {
                         exit={{ opacity: 0, y: -20 }}
                         className="flex items-center justify-center gap-2"
                       >
-                        Send Message
+                        Join the Platform
                         <FiSend className="w-5 h-5" />
                       </motion.span>
                     )}
@@ -259,7 +259,7 @@ export default function Contact() {
             className="space-y-6"
           >
             {/* Contact info cards */}
-            {contactInfo.map((info, index) => (
+            {contactInfo.map((info) => (
               <motion.div key={info.title} variants={staggerItem}>
                 <Card className="group glass-card border-0 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-400 cursor-pointer">
                   <div className="flex items-start gap-4">
